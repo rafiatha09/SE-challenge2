@@ -2,7 +2,7 @@
 
 This challenge will test your skills in backend engineering across various facets, including:
 
-- Framework proficiency: Demonstrate your ability to utilize a backend framework of your choice (e.g., Django, Spring Boot, Flask) to build a robust and scalable API.
+- Framework proficiency: Demonstrate your ability to utilize any JS or GO backend framework of your choice (e.g., Express, Sails) to build a robust and scalable API.
 - API design: Show your understanding of RESTful API principles by designing a clean and well-documented API for a microblogging platform.
 - SQL skills: Write efficient and accurate SQL queries to handle CRUD operations on user data, posts, and comments.
 - Git workflow: Submit your solution by cloning a provided Git repository and creating a pull request with your changes.
