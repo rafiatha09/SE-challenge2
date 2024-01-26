@@ -58,6 +58,7 @@ Your submission will be evaluated based on the following criteria:
 - Write the instruction on how to run the app by rewriting this README.md
 - Don't forget to write your name, email, and phone number on this file
 - Create a pull request
-- Please complete your working solution within 7 days of receiving this challenge, and be sure to notify us when it is submitted by sending us email through faizal@gapai.id with title format **[SE - Submission] - yourname** and send me the related link.
+- Please submit your working solution before 31th Jan 2024, 10.00 AM
+- Be sure to notify us when it is submitted by sending us email through faizal@gapai.id with title format **[SE - Submission] - yourname** and send me the related link.
 
 Happy Hacking! 🤘
