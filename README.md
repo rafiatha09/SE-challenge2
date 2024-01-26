@@ -57,7 +57,7 @@ Your submission will be evaluated based on the following criteria:
 - Make the app public. Deploy it using the service of your choice
 - Write the instruction on how to run the app by rewriting this README.md
 - Don't forget to write your name, email, and phone number on this file
-- Create a pull request
+- Create a pull request (ref: https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project)
 - Please submit your working solution before 31th Jan 2024, 10.00 AM
 - Be sure to notify us when it is submitted by sending us email through faizal@gapai.id with title format **[SE - Submission] - yourname** and send me the related link.
 
