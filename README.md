@@ -35,6 +35,7 @@ You are tasked with building the backend for a simple microblogging platform. Us
 - Add search functionality for posts and users.
 - Implement notification system for comments and interactions.
 - Deploy your API to a cloud platform (e.g., Heroku, AWS).
+- Build the [other challenge](https://github.com/GapaiID/SE-challenge1) and display your API
 
 ## Evaluation:
 
@@ -54,11 +55,11 @@ Your submission will be evaluated based on the following criteria:
 - The challenge is on!
 - Build a performant, clean and well-structured solution
 - Commit early and often. We want to be able to check your progress
-- Make the app public. Deploy it using the service of your choice
+- Make the app public. Deploy it using the service of your choice (to gain bonus point!)
 - Write the instruction on how to run the app by rewriting this README.md
 - Don't forget to write your name, email, and phone number on this file
 - Create a pull request (ref: https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project)
-- Please submit your working solution before 31th Jan 2024, 10.00 AM
+- Please submit your working solution before 6th Feb 2024, 19.00 PM (Submitting before that is always a plus point)
 - Be sure to notify us when it is submitted by sending us email through faizal@gapai.id with title format **[SE - Submission] - yourname** and send me the related link.
 
 Happy Hacking! 🤘
