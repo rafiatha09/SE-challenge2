@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id              String     @id @default(uuid())
+  username        String     @db.VarChar(100) 
+  password        String     @db.VarChar(100)
+  email           String     @db.VarChar(100)
+  first_name      String?     @db.VarChar(100)
+  last_name       String?     @db.VarChar(100)
+  phone_num       String?     @db.VarChar(100)
+  token           String?    
+  birth_date      DateTime?
+  address         String?
+
+  posts   Post[]
+  comments Comment[]
+
+  user_followed       Follow[] @relation("user_followed")
+  user_following      Follow[] @relation("user_following")
+
+  @@unique([username, email])
+  @@map("user")
+}
+
+model Follow {
+  id  String     @id @default(uuid())
+
+  user_id_followed            String
+  user_followed               User @relation("user_followed", fields: [user_id_followed], references: [id])
+
+  user_id_following           String
+  user_following              User @relation("user_following", fields: [user_id_following], references: [id])
+
+  @@unique([user_id_followed,user_id_following ])
+  @@map("follow")
+}
+
+model Comment {
+  id  String     @id @default(uuid())
+  content String
+
+  post_id  String
+  post Post @relation(fields: [post_id], references: [id])
+
+  user_id  String
+  user User @relation(fields: [user_id], references: [id])
+
+
+  @@map("comment")
+}
+
+model Post{
+  id  String     @id @default(uuid())
+  type  String
+  title String
+  created_at  DateTime
+  is_public Boolean  @default(true)
+
+  user_id  String
+  user User @relation(fields: [user_id], references: [id])
+
+  comments Comment[]
+  
+  @@map("post")
+}
