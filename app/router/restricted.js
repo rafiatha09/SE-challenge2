@@ -6,17 +6,18 @@ import followController from "../controller/follow-controller.js";
 import commentController from "../controller/comment-controller.js";
 
 const restrictedRouter = new express.Router();
-restrictedRouter.post("/v1/api/create-profile", userController.createProfileUserController);
-restrictedRouter.put("/v1/api/update-profile", userController.updateProfileUserController);
+restrictedRouter.use(jwtMiddleware);
+restrictedRouter.post("/v1/api/create-profile/:userId", userController.createProfileUserController);
+restrictedRouter.put("/v1/api/update-profile/:userId", userController.updateProfileUserController);
 restrictedRouter.post("/v1/api/create-post", postController.createPostController);
-restrictedRouter.put("/v1/api/update-post", postController.updatePostController);
-restrictedRouter.delete("/v1/api/delete-post", postController.deletePostController);
+restrictedRouter.put("/v1/api/update-post/:postId", postController.updatePostController);
+restrictedRouter.delete("/v1/api/delete-post/:postId", postController.deletePostController);
 restrictedRouter.post("/v1/api/create-follow", followController.createFollowController);
 restrictedRouter.post("/v1/api/create-comment", commentController.createCommentController);
+restrictedRouter.get("/v1/api/posts", postController.getAllPostController);
 
 
 
-restrictedRouter.use(jwtMiddleware);
 
 
 export { restrictedRouter };

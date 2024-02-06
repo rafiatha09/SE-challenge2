@@ -3,7 +3,7 @@ import postService from "../service/post-service.js";
 
 const createPostController = async (request, response, next) => {
   try {
-    const result = postService.createPostService(request);
+    const result = await postService.createPostService(request);
     response
       .status(200)
       .json(buildResponse(true, 200, "Success", result, null));
@@ -14,7 +14,7 @@ const createPostController = async (request, response, next) => {
 
 const updatePostController = async (request, response, next) => {
   try {
-    const result = postService.updatePostService(request);
+    const result = await postService.updatePostService(request);
     response
       .status(200)
       .json(buildResponse(true, 200, "Success", result, null));
@@ -24,7 +24,17 @@ const updatePostController = async (request, response, next) => {
 };
 const deletePostController = async (request, response, next) => {
   try {
-    const result = postService.deletePostService(request);
+    const result = await postService.deletePostService(request);
+    response
+      .status(200)
+      .json(buildResponse(true, 200, "Success", result, null));
+  } catch (error) {
+    next(error);
+  }
+};
+const getAllPostController= async (request, response, next) => {
+  try {
+    const result = await postService.getAllPostService(request);
     response
       .status(200)
       .json(buildResponse(true, 200, "Success", result, null));
@@ -36,5 +46,6 @@ const deletePostController = async (request, response, next) => {
 export default {
     createPostController,
     updatePostController,
-    deletePostController
+    deletePostController,
+    getAllPostController
 }

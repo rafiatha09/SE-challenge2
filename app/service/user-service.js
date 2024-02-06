@@ -1,5 +1,6 @@
 import { prismaClient } from "../application/database.js";
 import { validate } from "../helper/validate.js";
+import { ResponseError } from "../middleware/error.js";
 import {
   createUserProfileValidation,
   loginValidation,
@@ -52,9 +53,6 @@ const loginService = async (request) => {
         equals: login_request.username,
         mode: "insensitive",
       },
-    },
-    include: {
-      role: true,
     },
   });
 

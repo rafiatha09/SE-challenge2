@@ -5,7 +5,7 @@ const createPostValidation = Joi.object({
     title: Joi.string().required(),
     created_at: Joi.string().required(),
     is_public: Joi.boolean().required(),
-    user_id: Joi.string().required(),
+    content: Joi.string().required()
 })
 
 const updatePostValidation = Joi.object({
@@ -13,7 +13,7 @@ const updatePostValidation = Joi.object({
     title: Joi.string().optional(),
     created_at: Joi.string().optional(),
     is_public: Joi.boolean().optional(),
-    user_id: Joi.string().optional(),
+    content: Joi.string().optional()
 })
 
 const postIdValidation = Joi.string().required();

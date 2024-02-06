@@ -52,12 +52,52 @@ const deletePostService = async (request) => {
 };
 
 const getAllPostService = async (request) => {
-  return await prismaClient.post.findMany({});
+  const user_id = request.decodedToken.user_id;
+  let { is_public = "false" } = request.query;
+
+  let publicQuery = {};
+
+  let followingQuery = {};
+
+  if (is_public == "true") {
+    publicQuery = {
+      is_public: true,
+    };
+
+    const results = await prismaClient.follow.findMany({
+      where: {
+        user_id_following: user_id,
+      },
+      select: {
+        user_id_followed: true,
+      },
+    });
+    let users_id_followed = [];
+
+    results.forEach((result) => {
+      users_id_followed.push(result.user_id_followed);
+    });
+
+    followingQuery = {
+      user_id: {
+        in: users_id_followed,
+      },
+    };
+  } else {
+    publicQuery = {
+      is_public: false,
+    };
+  }
+  return await prismaClient.post.findMany({
+    where: {
+      AND: [publicQuery, followingQuery],
+    },
+  });
 };
 
 export default {
   createPostService,
   updatePostService,
   deletePostService,
-  getAllPostService
+  getAllPostService,
 };
