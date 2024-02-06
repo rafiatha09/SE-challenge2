@@ -1,6 +1,6 @@
-import { prismaClient } from "../application/database";
-import { validate } from "../helper/validate";
-import { createCommentValidation } from "../validation/comment-validation";
+import { prismaClient } from "../application/database.js";
+import { validate } from "../helper/validate.js";
+import { createCommentValidation } from "../validation/comment-validation.js";
 
 const createCommentService = async (request) => {
   const user_id = request.decodedToken.user_id;

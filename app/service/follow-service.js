@@ -1,6 +1,6 @@
-import { prismaClient } from "../application/database";
-import { validate } from "../helper/validate";
-import { createFollowValidation } from "../validation/follow-validation";
+import { prismaClient } from "../application/database.js";
+import { validate } from "../helper/validate.js";
+import { createFollowValidation } from "../validation/follow-validation.js";
 
 const createFollowService = async (request) => {
   const user_id = request.decodedToken.user_id;

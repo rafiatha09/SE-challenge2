@@ -1,4 +1,4 @@
-import Joi from "Joi";
+import Joi from "joi";
 
 const createFollowValidation = Joi.object({
     user_id_following: Joi.string().required(),

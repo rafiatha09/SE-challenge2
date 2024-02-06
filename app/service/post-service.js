@@ -1,9 +1,9 @@
-import { prismaClient } from "../application/database";
-import { validate } from "../helper/validate";
+import { prismaClient } from "../application/database.js";
+import { validate } from "../helper/validate.js";
 import {
   createPostValidation,
   updatePostValidation,
-} from "../validation/post-validation";
+} from "../validation/post-validation.js";
 
 const createPostService = async (request) => {
   const user_id = request.decodedToken.user_id;
